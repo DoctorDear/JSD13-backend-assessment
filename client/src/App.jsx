@@ -17,6 +17,7 @@ const App = () => {
       setProducts(data);
     } catch (error) {
       console.error("Error fetch data", error);
+      setError("Cannot connect server");
     } finally {
       setLoading(false);
     }
