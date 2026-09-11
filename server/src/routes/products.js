@@ -6,7 +6,14 @@ const router = express.Router();
 // read all product
 router.get("/products", (req, res, next) => {
   try {
-    res.status(200).send(products);
+    const { name } = req.query;
+    let filteredProducts = products;
+    if (name) {
+      filteredProducts = filteredProducts.filter((item) => {
+        return item.name.toLocaleLowerCase().includes(name.toLocaleLowerCase());
+      });
+    }
+    return res.status(200).send(filteredProducts);
   } catch (err) {
     next(err);
   }
@@ -88,19 +95,3 @@ router.delete("/products/:id", (req, res, next) => {
 });
 
 export default router;
-
-// search by name
-router.get("/products/:id", (req, res, next) => {
-  try {
-    const { name } = req.query;
-    let filteredProducts = products;
-    if (name) {
-      filteredProducts = filteredProducts.filter((item) => {
-        item.name.toLocaleLowerCase().includes(name.toLocaleLowerCase());
-      });
-    }
-    return res.status(200).send(filteredProducts);
-  } catch (err) {
-    next(err);
-  }
-});
