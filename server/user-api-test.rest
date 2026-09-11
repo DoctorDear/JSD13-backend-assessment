@@ -6,6 +6,10 @@ GET {{baseUrl}}/products
 ### 2. Search products by name 
 GET {{baseUrl}}/products?name=Ferrari
 
+### 2. Search by id
+GET {{baseUrl}}/products/1
+
+
 ### 2. Create a new product - Success 
 POST {{baseUrl}}/products
 Content-Type: application/json

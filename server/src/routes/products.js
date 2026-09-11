@@ -19,6 +19,21 @@ router.get("/products", (req, res, next) => {
   }
 });
 
+// read product by id
+router.get("/products/:id", (req, res, next) => {
+  try {
+    const product = products.find((p) => p.id === req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found!" });
+    }
+
+    return res.status(200).json(product);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // create product
 router.post("/products", (req, res, next) => {
   try {
@@ -30,12 +45,12 @@ router.post("/products", (req, res, next) => {
         .json({ error: "name, price, quantity are required! " });
     }
 
-    const hightestId = products.reduce(
-      (max, product) => Math.max(max, Number(product.id)),
-      0,
-    );
+    // const hightestId = products.reduce(
+    //   (max, product) => Math.max(max, Number(product.id)),
+    //   0,
+    // );
 
-    const nextId = String(hightestId + 1);
+    const nextId = `prod-${Date.now()}`;
 
     const newProduct = {
       id: nextId,
@@ -57,14 +72,14 @@ router.patch("/products/:id", (req, res, next) => {
     const product = products.find((p) => p.id === req.params.id);
 
     if (!product) {
-      return res.status(404).json({ error: "User not found!" });
+      return res.status(404).json({ error: "Product not found!" });
     }
     const { name, price, quantity } = req.body;
 
     if (!name || !price || !quantity) {
       return res
         .status(400)
-        .json({ error: "username, email and password are required!" });
+        .json({ error: "name, price, quantity are required!" });
     }
 
     product.name = name ?? product.name;
