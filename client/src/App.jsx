@@ -4,6 +4,8 @@ const API_URL = `${import.meta.env.VITE_API_URL}/products`;
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchProducts = async (name = "") => {
     try {
