@@ -1,7 +1,51 @@
-### Get all products
-GET http://localhost:3001/products
+@baseUrl = http://localhost:3001
 
-### Add a product
-POST http://localhost:3001/products
+### 1. Get all products 
+GET {{baseUrl}}/products
+
+### 2. Search products by name 
+GET {{baseUrl}}/products?name=Ferrari
+
+### 2. Create a new product - Success 
+POST {{baseUrl}}/products
 Content-Type: application/json
 
+{
+  "name": "Mercedes-AMG F1 Lewis Hamilton Special Cap",
+  "price": 2490,
+  "quantity": 15
+}
+
+### 3. Create a new product - Validation Error 
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Incomplete Product"
+}
+
+### 4. Update a product by ID - Success 
+PATCH {{baseUrl}}/products/1
+Content-Type: application/json
+
+{
+  "name": "Red Bull Racing 2026 Max Verstappen Special Edition",
+  "price": 3990,
+  "quantity": 20
+}
+
+### 5. Update a product - Not Found 
+PATCH {{baseUrl}}/products/1
+Content-Type: application/json
+
+{
+  "name": "Ghost Product",
+  "price": 1000,
+  "quantity": 1
+}
+
+### 6. Delete a product by ID - Success 
+DELETE {{baseUrl}}/products/6
+
+### 7. Delete a product - Not Found 
+DELETE {{baseUrl}}/products/999

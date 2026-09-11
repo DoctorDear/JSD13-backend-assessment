@@ -1,6 +1,6 @@
-export const product = [
+export const products = [
   {
-    id: "prod-001",
+    id: "1",
     name: "Red Bull Racing 2026 Max Verstappen Driver T-shirt",
     price: 3790,
     description:
@@ -10,7 +10,7 @@ export const product = [
       "https://cdn.shopify.com/s/files/1/0661/2477/5609/files/701242203001_pp_01_redbull.jpg?v=1780686332",
   },
   {
-    id: "prod-002",
+    id: "2",
     name: "Scuderia Ferrari F1 PUMA 2026 Team T-shirt",
     price: 2690,
     description:
@@ -20,7 +20,7 @@ export const product = [
       "https://cdn.shopify.com/s/files/1/0661/2477/5609/files/701238728001_pp_01_ferrari.webp?v=1771860972",
   },
   {
-    id: "prod-003",
+    id: "3",
     name: "McLaren F1 PUMA 2026 Team T-shirt",
     price: 2600,
     description:
@@ -30,7 +30,7 @@ export const product = [
       "https://cdn.shopify.com/s/files/1/0661/2477/5609/files/701241089001_pp_01_mclaren.webp?v=1770439422",
   },
   {
-    id: "prod-004",
+    id: "4",
     name: "Mercedes-AMG F1 adidas 2026 Team Engineers Polo",
     price: 3400,
     description:
@@ -40,7 +40,7 @@ export const product = [
       "https://cdn.shopify.com/s/files/1/0661/2477/5609/files/701242577002_pp_01_mercedes.webp?v=1768478926",
   },
   {
-    id: "prod-005",
+    id: "5",
     name: "Aston Martin F1 Team 2026 Replica Team T-shirt",
     price: 3190,
     description:
@@ -50,7 +50,7 @@ export const product = [
       "https://cdn.shopify.com/s/files/1/0661/2477/5609/files/701239691001_pp_01_astonmartin.jpg?v=1771916118",
   },
   {
-    id: "prod-006",
+    id: "6",
     name: "Atlassian Williams Racing 2026 Team Tech T-shirt",
     price: 3290,
     description:
