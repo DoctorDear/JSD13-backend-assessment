@@ -8,6 +8,8 @@ const App = () => {
   const [error, setError] = useState(null);
 
   const fetchProducts = async (name = "") => {
+    setLoading(true);
+    setError(null);
     try {
       const url = name ? `${API_URL}?name=${name}` : API_URL;
       const response = await fetch(url);
