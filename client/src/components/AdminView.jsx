@@ -14,7 +14,7 @@ const AdminView = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    createMember({
+    createProduct({
       name: name,
       price: price,
       quantity: quantity,
@@ -26,7 +26,7 @@ const AdminView = ({
   return (
     <div className="flex flex-col gap-8 my-6">
       <div className="flex flex-col items-start w-fit mx-auto gap-3">
-        <h2 className="font-bold text-lg text-black">Create User Here</h2>
+        <h2 className="font-bold text-lg text-black">Add New Product</h2>
         <form onSubmit={handleSubmit} className="flex justify-center gap-4">
           <input
             className="input validator"
@@ -36,15 +36,17 @@ const AdminView = ({
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Last Name"
+            type="number"
+            placeholder="Price"
+            min="0"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             className="input validator"
           />
           <input
-            type="text"
-            placeholder="Position"
+            type="number"
+            min="0"
+            placeholder="Quantity"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
             className="input validator"

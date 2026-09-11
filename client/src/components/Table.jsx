@@ -32,8 +32,8 @@ const Table = ({ products, deleteProduct, updateProduct }) => {
         <thead>
           <tr>
             <th className="w-1/3">Name</th>
-            <th className="w-1/3">Last Name</th>
-            <th className="w-1/3">Position</th>
+            <th className="w-1/3">Price</th>
+            <th className="w-1/3">Quantity</th>
             {deleteProduct && <th className="w-1/4">Action</th>}
           </tr>
         </thead>
