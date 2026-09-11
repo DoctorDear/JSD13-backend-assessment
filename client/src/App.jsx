@@ -17,6 +17,8 @@ const App = () => {
       setProducts(data);
     } catch (error) {
       console.error("Error fetch data", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -35,8 +37,6 @@ const App = () => {
       setProducts([...products, data]);
     } catch (error) {
       console.error("Error creating products", error);
-    } finally {
-      setLoading(false);
     }
   };
 
