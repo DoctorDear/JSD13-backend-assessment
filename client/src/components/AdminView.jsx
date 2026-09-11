@@ -40,7 +40,12 @@ const AdminView = ({
             placeholder="Price"
             min="0"
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={(e) => {
+              const val = e.target.value;
+              if (val === "" || Number(val) >= 0) {
+                setPrice(val);
+              }
+            }}
             className="input validator"
           />
           <input
@@ -48,7 +53,12 @@ const AdminView = ({
             min="0"
             placeholder="Quantity"
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e) => {
+              const val = e.target.value;
+              if (val === "" || Number(val) >= 0) {
+                setPrice(val);
+              }
+            }}
             className="input validator"
           />
           <button type="submit" className="btn bg-blue-500 text-white ">
