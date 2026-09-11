@@ -33,6 +33,8 @@ const App = () => {
       setProducts([...products, data]);
     } catch (error) {
       console.error("Error creating products", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,6 +66,10 @@ const App = () => {
   return (
     <div className="min-h-screen w-full bg-zinc-200">
       <div className="container mx-auto p-6 text-center">
+        {loading && (
+          <p className="text-blue-600 font-semibold my-4">loading...</p>
+        )}
+        {error && <p className="text-red-600 font-semibold my-4">{error}</p>}
         <AdminView
           products={products}
           fetchProducts={fetchProducts}

@@ -36,7 +36,7 @@ const AdminView = ({
 
   return (
     <div className="flex flex-col gap-8 my-6">
-      <div className="flex flex-col items-start w-fit   gap-6">
+      <div className="flex flex-col items-start w-fit gap-6">
         <div className="flex flex-col items-start  gap-3">
           <h2 className="font-bold text-lg text-black">Add New Product</h2>
           <form onSubmit={handleSubmit} className="flex justify-center gap-4">
